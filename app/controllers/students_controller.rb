@@ -30,7 +30,6 @@ class StudentsController < ApplicationController
   end
 
   def update
-
     if @student.update(student_params)
       flash[:notice] = "you have successufully update your profile"
       redirect_to @student
@@ -54,8 +53,6 @@ class StudentsController < ApplicationController
     if current_user != @student
       redirect_to student_path(current_user)
       flash[:notice] = " you can only edit your on profile"
-    else
-
     end
-
+  end
 end
